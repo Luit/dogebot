@@ -4,6 +4,8 @@ A Slack bot that'll place a `:doge:` reaction (you'll have to add it as a
 custom emoticon to your Slack) on posts containing at least one of the
 following words: wow, amaze, excite.
 
+![dogebot at work](dogebot.png)
+
 ## Building dogebot
 
 To build it the way I do, you'll need a working Go compiler, and
@@ -25,5 +27,3 @@ environment variable.
 
 The bot will automatically be added to your default (mandatory) channel. To
 get dogebot in the channel you want, invite it using a regular Slack account.
-
-![dogebot at work](dogebot.png)
