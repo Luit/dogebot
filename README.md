@@ -2,7 +2,8 @@
 
 A Slack bot that'll place a `:doge:` reaction (you'll have to add it as a
 custom emoticon to your Slack) on posts containing at least one of the
-following words: wow, amaze, excite.
+following words: wow, amaze, excite. This madness is caused by
+[@Zirv](https://twitter.com/Zirv), who came up with the idea for the bot.
 
 ![dogebot at work](dogebot.png)
 
