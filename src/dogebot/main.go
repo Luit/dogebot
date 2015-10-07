@@ -23,9 +23,9 @@ var (
 	matched = expvar.NewInt("matched")
 
 	regexes = []*regexp.Regexp{
-		regexp.MustCompile(`\bwow\b`),
-		regexp.MustCompile(`\bamaze\b`),
-		regexp.MustCompile(`\bexcite\b`),
+		regexp.MustCompile(`(?i)\bwow\b`),
+		regexp.MustCompile(`(?i)\bamaze\b`),
+		regexp.MustCompile(`(?i)\bexcite\b`),
 	}
 )
 
