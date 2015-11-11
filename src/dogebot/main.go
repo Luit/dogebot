@@ -29,12 +29,15 @@ var (
 	}
 )
 
+var ping = make(chan struct{}, 10)
+
 func init() {
 	go func() {
 		for {
 			time.Sleep(10 * time.Minute)
 			log.Printf("ignored: %s, regular: %s, changed: %s, matched: %s",
 				ignored.String(), regular.String(), changed.String(), matched.String())
+			ping <- struct{}{}
 		}
 	}()
 }
@@ -70,6 +73,15 @@ func main() {
 		log.Fatal(err)
 	}
 	defer conn.Close()
+	go func() {
+		for {
+			<-ping
+			err := conn.WriteControl(websocket.PingMessage, []byte{}, time.Now().Add(5*time.Second))
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+	}()
 	for {
 		_, b, err := conn.ReadMessage()
 		if err != nil {
@@ -91,7 +103,6 @@ func main() {
 		case "message":
 			go message(b)
 		}
-
 	}
 }
 
