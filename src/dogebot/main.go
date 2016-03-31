@@ -26,6 +26,7 @@ var (
 		regexp.MustCompile(`(?i)\bwow\b`),
 		regexp.MustCompile(`(?i)\bamaze\b`),
 		regexp.MustCompile(`(?i)\bexcite\b`),
+		regexp.MustCompile(`(?i)\bdoge\b`),
 	}
 )
 
